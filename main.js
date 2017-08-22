@@ -1,3 +1,4 @@
+let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 function fetch(url) {
     return new Promise(function(ok, ko) {
@@ -5,7 +6,7 @@ function fetch(url) {
         xhr.open("GET", url);
         xhr.onload = function() {
             if (xhr.status == 200) {
-                ok(xhr.response);
+                ok(xhr.responseText);
             } else {
                 ko(xhr.status)
             }
